@@ -107,7 +107,7 @@ nav .logo {
 
 #hero h1 {
     font-size: 50px;
-    color: #4a4a4a;
+    color: black;
     text-align: center;
     margin: 0 0 20px 0;
 }
@@ -160,7 +160,7 @@ nav .logo {
 #features h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #333;
+    color: black;
 }
 
 .feature-grid {
@@ -175,7 +175,7 @@ nav .logo {
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: black;
     padding: 20px;
     max-width: 300px;
     text-align: left;
@@ -183,19 +183,19 @@ nav .logo {
 
 .feature i {
     font-size: 36px;
-    color: #4a4a4a;
+    color: black;
     margin-right: 15px;
 }
 
 .feature h3 {
     font-size: 20px;
     margin: 0 0 10px 0;
-    color: #333;
+    color: #4a4a4a;
 }
 
 .feature p {
     margin: 0;
-    color: #555;
+    color: #4a4a4a;
 }
 
 #user-opinions {
@@ -209,7 +209,7 @@ nav .logo {
 
 #user-opinions h2 {
     font-size: 32px;
-    color: #4a4a4a;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -223,7 +223,7 @@ nav .logo {
 .opinion {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: #4a4a4a;
     padding: 20px;
     max-width: 300px;
     text-align: left;
