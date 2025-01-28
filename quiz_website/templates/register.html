@@ -1,27 +1,80 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style_register.css">
 </head>
 <body>
+    <nav>
+            <div class="logo">QuizZone.</div>
+    </nav>
 
-<div class="register-container">
-    <h1>Register</h1>
-    <form method="POST" action="/register">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <div class="container">
+        <div class="header">
+            <h1>Create Account</h1>
+            <p>Become an important part of our big family!</p>
+        </div>
 
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
 
-        <button type="submit">Register</button>
-    </form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
 
-    <div class="link">
-        <p>Already have an account? <a href="/login">Login here</a>.</p>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a strong password"
+                        autocomplete="new-password"
+                        required
+                    >
+                    <div class="password-requirements">
+                        Password must contain:
+                        <ul>
+                            <li>At least 6 characters</li>
+                            <li>One number</li>
+                            <li>One special character</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="register-button">Create Account</button>
+
+            <div class="login-link">
+                Already have an account? <a href="/login">Sign in</a>
+            </div>
+        </form>
     </div>
-</div>
 
 </body>
+<footer>
+    <p>© 2025 QuizZone. All rights reserved.</p>
+</footer>
 </html>

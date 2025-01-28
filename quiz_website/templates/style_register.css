@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/022/505/573/large_2x/white-marble-texture-skin-tile-wallpaper-background-free-photo.jpeg');
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #4a4a4a;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Container styles */
+.container {
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #4a4a4a;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a4a4a;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* Password requirements styles */
+.password-wrapper {
+    position: relative;
+}
+
+.password-requirements {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    z-index: 1;
+}
+
+.password-wrapper:focus-within .password-requirements {
+    display: block;
+}
+
+.password-requirements ul {
+    list-style-type: none;
+    margin-top: 0.5rem;
+}
+
+.password-requirements ul li {
+    margin: 0.25rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.password-requirements ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: #4a4a4a;
+}
+
+/* Button styles */
+.register-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: black;
+}
+
+/* Login link styles */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Fixed height */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
