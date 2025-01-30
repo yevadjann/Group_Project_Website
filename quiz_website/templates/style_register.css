@@ -16,13 +16,26 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+nav a {
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: underline;
+    transition: background-color 0.3s ease;
+    margin-right: 20px;
+}
+
+nav a:hover {
+    background-color: #4A90E2;
+}
+
 .logo {
+    text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     color: #ffffff;
 }
 
-/* Container styles */
 .container {
     max-width: 450px;
     margin: 2rem auto;
@@ -32,7 +45,6 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header styles */
 .header {
     text-align: center;
     margin-bottom: 2rem;
@@ -47,7 +59,6 @@ nav {
     color: #4a4a4a;
 }
 
-/* Form styles */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -74,7 +85,6 @@ input:focus {
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
 }
 
-/* Password requirements styles */
 .password-wrapper {
     position: relative;
 }
@@ -116,7 +126,6 @@ input:focus {
     color: #4a4a4a;
 }
 
-/* Button styles */
 .register-button {
     width: 100%;
     padding: 0.75rem;
@@ -134,7 +143,6 @@ input:focus {
     background-color: black;
 }
 
-/* Login link styles */
 .login-link {
     text-align: center;
     margin-top: 1.5rem;
@@ -160,12 +168,4 @@ footer {
     width: 100%;
     height: 60px; /* Fixed height */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive styles */
-@media (max-width: 480px) {
-    .container {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
 }
