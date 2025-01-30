@@ -5,21 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_login.css">
     <title>Login Page</title>
-    <script>
-        function redirectToSelect_quiz() {
-            window.location.href = "{{url_for('select_quiz')}}";
-        }
-        function redirectToRegister() {
-            window.location.href = "{{url_for('register')}}";
-        }
-    </script>
 
 </head>
 <body>
 
     <nav>
         <div class="logo">QuizZone.</div>
-        <a href="#home">Home</a>
+        <a href="{{ url_for('index') }}">Home</a>
     </nav>
 
     <div class="login-container">
@@ -46,10 +38,10 @@
                         placeholder="Enter your password"
                         required>
             </div>
-            <button type="submit" class="login-button" onclick="redirectToSelect_quiz()">Login</button>
+            <button type="submit" class="login-button">Login</button>
 
              <div class="register-link">
-                Still don't have an account? <a href="/register">Register</a>
+                Still don't have an account? <a href="{{ url_for('register') }}">Register</a>
             </div>
 
          </form>
