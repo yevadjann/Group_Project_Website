@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="style_register.css">
-
+    <script>
+        function redirectToLogin() {
+            window.location.href = "{{url_for('login')}}";
+        }
+        function redirectToSelect_quiz() {
+            window.location.href = "{{url_for('select_quiz')}}";
+        }
+    </script>
 </head>
 <body>
     <nav>
@@ -66,7 +73,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="register-button">Create Account</button>
+            <button type="submit" class="register-button" onclick="redirectToSelect_quiz()">Create Account</button>
 
             <div class="login-link">
                 Already have an account? <a href="/login">Sign in</a>

@@ -17,12 +17,13 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False, unique=True)
 
-    def __init__(self, password, email, username):
+    def __init__(self, username, email, password):
         self.username = username
-        self.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         self.email = email
+        self.password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
 
     def check_password(self, password):
         return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
@@ -42,10 +43,13 @@ def index():
 def register():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password']
         email = request.form['email']
+        password = request.form['password']
 
-        existing_user = User.query.filter_by(username=username).first()
+        if not username or not email or not password:
+            return render_template('register.html', error="All fields are required.")
+
+        existing_user = User.query.filter_by(email=email).first()
         if existing_user:
             return render_template('register.html', error='Email already registered')
 
@@ -54,6 +58,7 @@ def register():
         db.session.commit()
 
         login_user(new_user)
+        session['username'] = new_user.username
 
         return redirect('/select_quiz')
 
@@ -62,13 +67,19 @@ def register():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        if not email or not password:
+            return render_template('login.html', error="Please fill in all fields.")
+
 
         user = User.query.filter_by(email = email).first()
+
         if user and user.check_password(password):
             login_user(user)
-            return redirect('/select_quiz')
+            session['username'] = user.username
+            return redirect('/select_quiz') #!!!!  return redirect(url_for('select_quiz'))
         else:
             return render_template('login.html', error = 'Invalid user')
 
