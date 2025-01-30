@@ -1,17 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_food_quiz.css">
     <title>Food Quiz</title>
 </head>
 <body>
-    <h1>Food Quiz</h1>
-    <form method="POST">
-        <label>Question 1: What is sushi made of?</label>
-        <input type="radio" name="q1" value="correct"> Rice and Fish
-        <input type="radio" name="q1" value="incorrect"> Bread and Cheese
-        <br>
-        <!-- Add more questions -->
-        <button type="submit">Submit</button>
-    </form>
+    <nav>
+        <div class="logo">QuizZone.</div>
+    </nav>
+
+    <div class="header">
+        <h1>Food quiz</h1>
+        <p>Welcome to the Food Quiz! If you love to eat, get ready to enjoy this exciting challenge!</p>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question-card">
+            <p class="question-text">Question 1: What is the main ingredient in guacamole?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Tomato</span>
+                    <input type="radio" name="q1" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Avocado</span>
+                    <input type="radio" name="q1" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Onion</span>
+                    <input type="radio" name="q1" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Cilantro</span>
+                    <input type="radio" name="q1" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 2: Which country is famous for its sushi?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">China</span>
+                    <input type="radio" name="q2" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">China</span>
+                    <input type="radio" name="q2" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Japan</span>
+                    <input type="radio" name="q2" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">South Korea</span>
+                    <input type="radio" name="q2" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 3: What type of pasta is shaped like little rice grains?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Fusilli</span>
+                    <input type="radio" name="q3" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Orzo</span>
+                    <input type="radio" name="q3" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Penne</span>
+                    <input type="radio" name="q3" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Ravioli</span>
+                    <input type="radio" name="q3" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 4: Which fruit is known as the "king of fruits" in Southeast Asia?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Mango</span>
+                    <input type="radio" name="q4" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Durian</span>
+                    <input type="radio" name="q4" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Pineapple</span>
+                    <input type="radio" name="q4" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Papaya</span>
+                    <input type="radio" name="q4" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 5: What is traditionally the main ingredient of hummus?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Chickpeas</span>
+                    <input type="radio" name="q5" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Lentils</span>
+                    <input type="radio" name="q5" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Soybeans</span>
+                    <input type="radio" name="q5" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Peanuts</span>
+                    <input type="radio" name="q5" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 6: Which country is the origin of the dish "paella"?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Italy</span>
+                    <input type="radio" name="q6" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Portugal</span>
+                    <input type="radio" name="q6" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">France</span>
+                    <input type="radio" name="q6" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Spain</span>
+                    <input type="radio" name="q6" value="correct">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 7: What is the most widely consumed meat in the world?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Pork</span>
+                    <input type="radio" name="q7" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Chicken</span>
+                    <input type="radio" name="q7" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Beef</span>
+                    <input type="radio" name="q7" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Lamb</span>
+                    <input type="radio" name="q7" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 8: What type of pastry is used to make a traditional baklava?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Puff pastry</span>
+                    <input type="radio" name="q8" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Phyllo dough</span>
+                    <input type="radio" name="q8" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Shortcrust pastry</span>
+                    <input type="radio" name="q8" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Choux pastry</span>
+                    <input type="radio" name="q8" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 9: Which spice gives curry its yellow color?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Paprika</span>
+                    <input type="radio" name="q9" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Saffron</span>
+                    <input type="radio" name="q9" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Turmeric</span>
+                    <input type="radio" name="q9" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Cumin</span>
+                    <input type="radio" name="q9" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <p class="question-text">Question 10: What type of cheese is traditionally used on a Margherita pizza?</p>
+            <div class="options-container">
+                <label class="option">
+                    <span class="option-text">Cheddar</span>
+                    <input type="radio" name="q10" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Mozzarella</span>
+                    <input type="radio" name="q10" value="correct">
+                </label>
+                <label class="option">
+                    <span class="option-text">Parmesan</span>
+                    <input type="radio" name="q10" value="incorrect">
+                </label>
+                <label class="option">
+                    <span class="option-text">Gouda</span>
+                    <input type="radio" name="q10" value="incorrect">
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Submit Quiz</button>
+    </div>
+
+    <footer>
+        <p>© 2025 QuizZone. All rights reserved.</p>
+    </footer>
 </body>
 </html>
