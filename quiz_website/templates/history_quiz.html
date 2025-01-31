@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_quizzes.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_quizzes.css') }}">
     <title>History Quiz</title>
 </head>
 <body>
     <nav>
         <div class="logo">QuizZone.</div>
-        <a href="#home">Home</a>
-        <a href="#select_quiz">Select other quizzes</a>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('select_quiz') }}">Select other quizzes</a>
     </nav>
 
     <div class="header">
@@ -19,227 +19,229 @@
     </div>
 
     <div class="quiz-container">
-        <div class="question-card">
-            <p class="question-text">Question 1: Who was the first President of the United States?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Thomas Jefferson</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">John Adams</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">George Washington</span>
-                    <input type="radio" name="q1" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">James Madison</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
+        <form method="POST" action="{{ url_for('submit_food_quiz') }}">
+            <div class="question-card">
+                <p class="question-text">Question 1: Who was the first President of the United States?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Thomas Jefferson</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">John Adams</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">George Washington</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">James Madison</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 2: What year did World War II end?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">1939</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1945</span>
-                    <input type="radio" name="q2" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">1941</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1950</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 2: What year did World War II end?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">1939</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1945</span>
+                        <input type="radio" name="q2" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1941</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1950</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 3: The ancient Egyptian writing system was called what?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Cuneiform</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Hieroglyphics</span>
-                    <input type="radio" name="q3" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Latin</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Aramaic</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 3: The ancient Egyptian writing system was called what?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Cuneiform</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Hieroglyphics</span>
+                        <input type="radio" name="q3" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Latin</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Aramaic</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 4: Which empire was ruled by Julius Caesar?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">The Byzantine Empire</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Roman Empire</span>
-                    <input type="radio" name="q4" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Ottoman Empire</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Persian Empire</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 4: Which empire was ruled by Julius Caesar?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">The Byzantine Empire</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Roman Empire</span>
+                        <input type="radio" name="q4" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Ottoman Empire</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Persian Empire</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 5: The signing of the Declaration of Independence took place in which year?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">1776</span>
-                    <input type="radio" name="q5" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">1783</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1754</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1812</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 5: The signing of the United States Declaration of Independence took place in which year?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">1776</span>
+                        <input type="radio" name="q5" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1783</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1754</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1812</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 6: Who was the British prime minister during most of World War II?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Winston Churchill</span>
-                    <input type="radio" name="q6" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Neville Chamberlain</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Margaret Thatcher</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Tony Blair</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 6: Who was the British prime minister during most of World War II?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Winston Churchill</span>
+                        <input type="radio" name="q6" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Neville Chamberlain</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Margaret Thatcher</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Tony Blair</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 7: The Renaissance began in which European country?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">France</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Italy</span>
-                    <input type="radio" name="q7" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Spain</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Germany</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 7: The Renaissance began in which European country?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">France</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Italy</span>
+                        <input type="radio" name="q7" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Spain</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Germany</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 8: The Berlin Wall fell in what year, symbolizing the end of the Cold War?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">1981</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1991</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1989</span>
-                    <input type="radio" name="q8" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">1993</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 8: The Berlin Wall fell in what year, symbolizing the end of the Cold War?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">1981</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1991</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1989</span>
+                        <input type="radio" name="q8" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1993</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 9: What was the name of the ship that brought the Pilgrims to America in 1620?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">The Nina</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Santa Maria</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Mayflower</span>
-                    <input type="radio" name="q9" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">The Endeavour</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 9: What was the name of the ship that brought the Pilgrims to America in 1620?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">The Nina</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Santa Maria</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Mayflower</span>
+                        <input type="radio" name="q9" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The Endeavour</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 10: The Battle of Waterloo was fought in which year?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">1799</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1815</span>
-                    <input type="radio" name="q10" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">1805</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">1830</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 10: The Battle of Waterloo was fought in which year?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">1799</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1815</span>
+                        <input type="radio" name="q10" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1805</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">1830</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <button type="submit">Submit Quiz</button>
+            <button type="submit">Submit Quiz</button>
+        </form>
     </div>
 
     <footer>

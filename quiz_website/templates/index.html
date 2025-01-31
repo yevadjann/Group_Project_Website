@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=6.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuizZone</title>
-    <link rel="stylesheet" href="templates/style_index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_index.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script>
         function redirectToLogin() {
@@ -25,8 +25,8 @@
     <p>Welcome to QuizZone, the ultimate quiz platform where knowledge meets rewards! Test your skills with a variety of fun and challenging quizzes across different topics. Earn coins for every correct answer, and use them to purchase exciting items in our online shop.</p>
 
     <div class="image-container">
-        <img src="images/left-side-image.jpg" alt="Black cat with books">
-        <img src="images/right-side-image.jpg" alt="Desk setup">
+        <img src="../static/images/left-side-image.jpg" alt="Black cat with books">
+        <img src="../static/images/right-side-image.jpg" alt="Desk setup">
     </div>
 
     <div class="button-container">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_select_quiz.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_select_quiz.css') }}">
     <title>Select a Quiz</title>
 </head>
 <body>
@@ -22,37 +22,37 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('food_quiz') }}">
-                    <img src="images/food_image.jpg" alt="Food Quiz">
+                    <img src="../static/images/food_image.jpg" alt="Food Quiz">
                          Food Quiz
                     </a>
                 </li>
 
                 <li><a href="{{ url_for('music_quiz') }}">
-                    <img src="images/music_image.jpg" alt="Music Quiz">
+                    <img src="../static/images/music_image.jpg" alt="Music Quiz">
                     Music Quiz
                     </a>
                 </li>
 
                 <li><a href="{{ url_for('history_quiz') }}">
-                    <img src="images/history_image.jpg" alt="History Quiz">
+                    <img src="../static/images/history_image.jpg" alt="History Quiz">
                     History Quiz
                     </a>
                 </li>
 
                 <li><a href="{{ url_for('travel_quiz') }}">
-                    <img src="images/travel_image.jpg" alt="Travel Quiz">
+                    <img src="../static/images/travel_image.jpg" alt="Travel Quiz">
                     Travel Quiz
                     </a>
                 </li>
 
                  <li><a href="{{ url_for('psychology_quiz') }}">
-                    <img src="images/psychology_image.jpg" alt="Psychology Quiz">
+                    <img src="../static/images/psychology_image.jpg" alt="Psychology Quiz">
                     Psychology Quiz
                     </a>
                 </li>
 
                 <li><a href="{{ url_for('special_quiz') }}">
-                    <img src="images/special_quiz.jpg" alt="Special Quiz">
+                    <img src="../static/images/special_quiz.jpg" alt="Special Quiz">
                     Special-secret Quiz
                     </a>
                 </li>

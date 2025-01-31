@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_quiz_result.css') }}">
+    <title>Quiz Result</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">QuizZone.</div>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('select_quiz') }}">Select other quizzes</a>
+    </nav>
+
+    <div class="header">
+        <h1>Your Result</h1>
+        <p>You've completed the Food Quiz!</p>
+    </div>
+
+    <div class="result-container">
+        <h2>You got {{ score }} out of {{ total_questions }} correct!</h2>
+    </div>
+
+    <footer>
+        <p>© 2025 QuizZone. All rights reserved.</p>
+    </footer>
+</body>
+</html>

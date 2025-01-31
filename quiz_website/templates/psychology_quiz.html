@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_quizzes.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_quizzes.css') }}">
     <title>Psychology Quiz</title>
 </head>
 <body>
     <nav>
         <div class="logo">QuizZone.</div>
-        <a href="#home">Home</a>
-        <a href="#select_quiz">Select other quizzes</a>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('select_quiz') }}">Select other quizzes</a>
     </nav>
 
     <div class="header">
@@ -19,227 +19,229 @@
     </div>
 
     <div class="quiz-container">
-        <div class="question-card">
-            <p class="question-text">Question 1: Who is known as the father of psychoanalysis?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Carl Jung</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Sigmund Freud</span>
-                    <input type="radio" name="q1" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">B.F. Skinner</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Abraham Maslow</span>
-                    <input type="radio" name="q1" value="incorrect">
-                </label>
+        <form method="POST" action="{{ url_for('submit_psychology_quiz') }}">
+            <div class="question-card">
+                <p class="question-text">Question 1: Who is known as the father of psychoanalysis?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Carl Jung</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Sigmund Freud</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">B.F. Skinner</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Abraham Maslow</span>
+                        <input type="radio" name="q1" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 2: What is the primary focus of cognitive psychology?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">The study of unconscious mind and repressed memories.</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The study of observable behavior.</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The study of mental processes such as perception, memory, and reasoning.</span>
-                    <input type="radio" name="q2" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">The study of human motivations and needs.</span>
-                    <input type="radio" name="q2" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 2: What is the primary focus of cognitive psychology?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">The study of unconscious mind and repressed memories.</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The study of observable behavior.</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The study of mental processes such as perception, memory, and reasoning.</span>
+                        <input type="radio" name="q2" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The study of human motivations and needs.</span>
+                        <input type="radio" name="q2" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 3: Which of these is a stage in Erik Erikson’s psychosocial development theory?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Trust vs. Mistrust</span>
-                    <input type="radio" name="q3" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Sensorimotor</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Preoperational</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Formal Operations</span>
-                    <input type="radio" name="q3" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 3: Which of these is a stage in Erik Erikson’s psychosocial development theory?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Trust vs. Mistrust</span>
+                        <input type="radio" name="q3" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Sensorimotor</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Preoperational</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Formal Operations</span>
+                        <input type="radio" name="q3" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 4: What does Maslov's hierarchy of needs start with?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Safety needs</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Love and belonging needs</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Physiological needs</span>
-                    <input type="radio" name="q4" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Self-actualization</span>
-                    <input type="radio" name="q4" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 4: What does Maslov's hierarchy of needs start with?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Safety needs</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Love and belonging needs</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Physiological needs</span>
+                        <input type="radio" name="q4" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Self-actualization</span>
+                        <input type="radio" name="q4" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 5: What is the term for the ability to think logically about abstract concepts, according to Piaget?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Concrete operational stage</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Formal operational stage</span>
-                    <input type="radio" name="q5" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Sensorimotor stage</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Preoperational stage</span>
-                    <input type="radio" name="q5" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 5: What is the term for the ability to think logically about abstract concepts, according to Piaget?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Concrete operational stage</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Formal operational stage</span>
+                        <input type="radio" name="q5" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Sensorimotor stage</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Preoperational stage</span>
+                        <input type="radio" name="q5" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 6: Which of the following is a key focus of behaviorism in psychology?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">The study of unconscious processes.</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The study of behavior and how it is influenced by the environment.</span>
-                    <input type="radio" name="q6" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">The exploration of dreams and their meanings.</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">The study of internal mental states, such as beliefs and desires.</span>
-                    <input type="radio" name="q6" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 6: Which of the following is a key focus of behaviorism in psychology?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">The study of unconscious processes.</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The study of behavior and how it is influenced by the environment.</span>
+                        <input type="radio" name="q6" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The exploration of dreams and their meanings.</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">The study of internal mental states, such as beliefs and desires.</span>
+                        <input type="radio" name="q6" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 7: What is the term for the tendency to look for information that confirms one’s preexisting beliefs?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Confirmation bias</span>
-                    <input type="radio" name="q7" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Self-serving bias</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Cognitive dissonance</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Fundamental attribution error</span>
-                    <input type="radio" name="q7" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 7: What is the term for the tendency to look for information that confirms one’s preexisting beliefs?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Confirmation bias</span>
+                        <input type="radio" name="q7" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Self-serving bias</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Cognitive dissonance</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Fundamental attribution error</span>
+                        <input type="radio" name="q7" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 8: In which part of the brain is the hippocampus located?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Occipital lobe</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Frontal lobe</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Temporal lobe</span>
-                    <input type="radio" name="q8" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Parietal lobe</span>
-                    <input type="radio" name="q8" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 8: In which part of the brain is the hippocampus located?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Occipital lobe</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Frontal lobe</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Temporal lobe</span>
+                        <input type="radio" name="q8" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Parietal lobe</span>
+                        <input type="radio" name="q8" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 9: What is the term for a psychological disorder characterized by persistent feelings of sadness and loss of interest?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Bipolar disorder</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Schizophrenia</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Depression</span>
-                    <input type="radio" name="q9" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Anxiety disorder</span>
-                    <input type="radio" name="q9" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 9: What is the term for a psychological disorder characterized by persistent feelings of sadness and loss of interest?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Bipolar disorder</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Schizophrenia</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Depression</span>
+                        <input type="radio" name="q9" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Anxiety disorder</span>
+                        <input type="radio" name="q9" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <div class="question-card">
-            <p class="question-text">Question 10: Which psychological approach emphasizes the role of environmental factors in shaping behavior?</p>
-            <div class="options-container">
-                <label class="option">
-                    <span class="option-text">Cognitive psychology</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Psychoanalysis</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
-                <label class="option">
-                    <span class="option-text">Humanistic psychology</span>
-                    <input type="radio" name="q10" value="correct">
-                </label>
-                <label class="option">
-                    <span class="option-text">Behaviorism</span>
-                    <input type="radio" name="q10" value="incorrect">
-                </label>
+            <div class="question-card">
+                <p class="question-text">Question 10: Which psychological approach emphasizes the role of environmental factors in shaping behavior?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Cognitive psychology</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Psychoanalysis</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Humanistic psychology</span>
+                        <input type="radio" name="q10" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Behaviorism</span>
+                        <input type="radio" name="q10" value="incorrect">
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <button type="submit">Submit Quiz</button>
+            <button type="submit">Submit Quiz</button>
+        </form>
     </div>
 
     <footer>

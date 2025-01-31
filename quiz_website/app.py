@@ -40,6 +40,15 @@ class QuizAnswer(db.Model):
 
     user = db.relationship('User', backref=db.backref('answers', lazy=True))
 
+class QuizResult(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    quiz_name = db.Column(db.String(100), nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+    total_questions = db.Column(db.Integer, nullable=False)
+
+    user = db.relationship('User', backref=db.backref('quiz_results', lazy=True))
+
 
 with app.app_context():
     db.create_all()
@@ -106,30 +115,260 @@ def select_quiz():
 def food_quiz():
     return render_template('food_quiz.html')
 
+
+@app.route('/submit_food_quiz', methods=['POST'])
+@login_required
+def submit_food_quiz():
+    correct_answers = {
+        "q1": "Avocado",
+        "q2": "Japan",
+        "q3": "Orzo",
+        "q4": "Durian",
+        "q5": "Chickpeas",
+        "q6": "Spain",
+        "q7": "Chicken",
+        "q8": "Phyllo doug",
+        "q9": "Turmeric",
+        "q10": "Mozzarella"
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="Food Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
+
 @app.route('/music_quiz')
 @login_required
 def music_quiz():
     return render_template('music_quiz.html')
+
+@app.route('/submit_music_quiz', methods=['POST'])
+@login_required
+def submit_music_quiz():
+    correct_answers = {
+        "q1": "Michael Jackson",
+        "q2": "Thriller by Michael Jackson",
+        "q3": "Queen",
+        "q4": "19",
+        "q5": "The Beatles",
+        "q6": "Chris Martin",
+        "q7": "Ludwig van Beethoven",
+        "q8": "Mark Ronson ft. Bruno Mars",
+        "q9": "Woodstock",
+        "q10": "Taylor Swift"
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="Music Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
 
 @app.route('/history_quiz')
 @login_required
 def history_quiz():
     return render_template('history_quiz.html')
 
+@app.route('/submit_history_quiz', methods=['POST'])
+@login_required
+def submit_history_quiz():
+    correct_answers = {
+        "q1": "George Washingto",
+        "q2": "1945",
+        "q3": "Hieroglyphics",
+        "q4": "The Roman Empire",
+        "q5": "1776",
+        "q6": "Winston Churchill",
+        "q7": "Italy",
+        "q8": "1989",
+        "q9": "The Mayflower",
+        "q10": "1815"
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="History Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
+
 @app.route('/travel_quiz')
 @login_required
 def travel_quiz():
     return render_template('travel_quiz.html')
+
+@app.route('/submit_travel_quiz', methods=['POST'])
+@login_required
+def submit_travel_quiz():
+    correct_answers = {
+        "q1": "Tokyo",
+        "q2": "Australia",
+        "q3": "Venices",
+        "q4": "Italy",
+        "q5": "Paris",
+        "q6": "Christ the Redeemer",
+        "q7": "Peru",
+        "q8": "Agra",
+        "q9": "Rio de Janeiro",
+        "q10": "Sahara Desert"
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="Travel Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
 
 @app.route('/psychology_quiz')
 @login_required
 def psychology_quiz():
     return render_template('psychology_quiz.html')
 
+@app.route('/submit_psychology_quiz', methods=['POST'])
+@login_required
+def submit_psychology_quiz():
+    correct_answers = {
+        "q1": "Sigmund Freud",
+        "q2": "The study of mental processes such as perception, memory, and reasoning.",
+        "q3": "Trust vs. Mistrust",
+        "q4": "Physiological needs",
+        "q5": "Formal operational stag",
+        "q6": "The study of behavior and how it is influenced by the environment.",
+        "q7": "Confirmation bias",
+        "q8": "Temporal lobe",
+        "q9": "Depression",
+        "q10": "Humanistic psychology"
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="Psychology Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
+
 @app.route('/special_quiz')
 @login_required
 def special_quiz():
     return render_template('special_quiz.html')
+
+@app.route('/submit_special_quiz', methods=['POST'])
+@login_required
+def submit_special_quiz():
+    correct_answers = {
+        "q1": "Yes",
+    }
+
+    user_answers = {key: request.form.get(key) for key in correct_answers.keys()}
+
+    score = 0
+    for key, correct_answer in correct_answers.items():
+        user_answer = request.form.get(key)
+        if user_answer == "correct":
+            score += 1
+
+    total_questions = len(correct_answers)
+
+    new_result = QuizResult(
+        user_id=current_user.id,
+        quiz_name="Special Quiz",
+        score=score,
+        total_questions=total_questions
+    )
+
+    db.session.add(new_result)
+    db.session.commit()
+
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
+
+@app.route('/submit_quiz', methods=['POST'])
+def submit_quiz():
+    answers = request.form
+    return render_template('quiz_result.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
