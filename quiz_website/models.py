@@ -1,4 +1,4 @@
-from app import app, db, User, QuizResult  # Replace 'your_flask_file' with your actual Flask app filename
+from app import app, db, User, QuizResult
 
 def get_all_users():
     with app.app_context():
