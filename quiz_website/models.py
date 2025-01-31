@@ -6,7 +6,6 @@ def get_all_users():
         for user in users:
             print(f"ID: {user.id}, Username: {user.username}, Email: {user.email}")
 
-
 def get_all_quiz_results():
     with app.app_context():
         quiz_results = QuizResult.query.all()
