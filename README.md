@@ -232,5 +232,5 @@ quiz_website/
 
 ## 👥 Authors
 
-- **Yeva Zembytska** - *Co-developer* - [GitHub Profile](https://github.com/yevadjan)
+- **Yeva Zembytska** - *Co-developer* - [GitHub Profile](https://github.com/yevadjann)
 - **Gurowamuki** - *Co-developer* - [GitHub Profile](https://github.com/gurowamuki)
