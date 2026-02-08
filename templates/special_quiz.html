@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_quizzes.css') }}">
+    <title>Secret Quiz</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">QuizZone.</div>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('select_quiz') }}"Select other quizzes</a>
+    </nav>
+
+    <div class="header">
+        <h1>Special quiz</h1>
+    </div>
+
+    <div class="quiz-container">
+        <form method="POST" action="{{ url_for('submit_special_quiz') }}">
+            <div class="question-card">
+                <p class="question-text">Question 1: Will you grade us 5?</p>
+                <div class="options-container">
+                    <label class="option">
+                        <span class="option-text">Yes</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Yes</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Yes</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                    <label class="option">
+                        <span class="option-text">Yes</span>
+                        <input type="radio" name="q1" value="correct">
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 QuizZone. All rights reserved.</p>
+    </footer>
+</body>
+</html>
