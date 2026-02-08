@@ -164,6 +164,7 @@ quiz_website/
     ├── psychology_quiz.html        # Psychology quiz questions
     ├── special_quiz.html           # Special quiz questions
     └── quiz_result.html            # Results display
+```
 
 ---
 
